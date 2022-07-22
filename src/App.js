@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createTheme, ThemeProvider, Stack, Divider } from "@mui/material";
+import { Header, Nav } from "components/organisms";
+import { Home, Write, Restaurant } from "components/routes";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#000000",
+    },
+  },
+  typography: {
+    fontFamily: "'Noto Sans KR', sans-serif",
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Stack alignItems="center" p={10}>
+          <Stack width="100%" maxWidth={700} spacing={5}>
+            <Header />
+            <Stack direction="row" spacing={5}>
+              <Nav />
+              <Stack flex={1}>
+                <Routes>
+                  <Route index element={<Home />} />
+                  <Route path="restaurant/:id" element={<Restaurant />} />
+                  <Route path="write" element={<Write />} />
+                </Routes>
+              </Stack>
+            </Stack>
+          </Stack>
+        </Stack>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
