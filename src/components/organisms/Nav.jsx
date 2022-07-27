@@ -13,6 +13,7 @@ export const Nav = () => {
     <Stack spacing={5} width={100}>
       <Button onClick={() => handleClickNavigate("/")}>식당목록</Button>
       <Button onClick={() => handleClickNavigate("write")}>식당등록</Button>
+      <Button onClick={() => handleClickNavigate("lotto")}>ㅋㅋ</Button>
     </Stack>
   );
 };

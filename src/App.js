@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider, Stack, Divider } from "@mui/material";
 import { Header, Nav } from "components/organisms";
-import { Home, Write, Restaurant } from "components/routes";
+import { Home, Write, Restaurant, Lotto } from "components/routes";
 
 const theme = createTheme({
   palette: {
@@ -28,6 +28,7 @@ function App() {
                   <Route index element={<Home />} />
                   <Route path="restaurant/:id" element={<Restaurant />} />
                   <Route path="write" element={<Write />} />
+                  <Route path="lotto" element={<Lotto />} />
                 </Routes>
               </Stack>
             </Stack>
