@@ -31,7 +31,6 @@ export const Lotto = () => {
           reset
         </Button>
       </Stack>
-
       <Stack direction="row" spacing={2}>
         {picks.map((pick) => (
           <Typography key={pick} variant="h4">
